@@ -2,26 +2,22 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    public bool player1Goal; // true = gol del jugador 1, false = gol del jugador 2
-    public GameObject gameManager; // Referencia al GameManager para actualizar el puntaje
-
+    public bool isLeftGoal;// Indica si este gol es el gol izquierdo (jugador 1) o el gol derecho (jugador 2)
+    public GameObject gameManager;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Si lo que entra en la portería es la pelota
         if (collision.CompareTag("Ball"))
         {
-            Debug.Log("¡Gol!");
-
-            // Si la pelota entra en la portería del jugador 1, marca el jugador 2
-            if (player1Goal)
+            if (isLeftGoal)// Si el gol es el gol izquierdo, el jugador 2 anota
             {
                 gameManager.GetComponent<GameManager>().Player2Scored();
+                Debug.Log("¡Jugador 2 anota!");
             }
-            else
+            else// Si el gol es el gol derecho, el jugador 1 anota
             {
-                // Si entra en la portería del jugador 2, marca el jugador 1
                 gameManager.GetComponent<GameManager>().Player1Scored();
+                Debug.Log("¡Jugador 1 anota!");
             }
         }
     }
