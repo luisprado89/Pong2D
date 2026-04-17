@@ -569,7 +569,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.023529412, g: 0.03137255, b: 0.05882353, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -951,7 +951,7 @@ MonoBehaviour:
   player2Goal: {fileID: 1146481991}
   player1ScoreText: {fileID: 1869324}
   player2ScoreText: {fileID: 629470836}
-  AIGame: 1
+  AIGame: 0
 --- !u!4 &1474595507
 Transform:
   m_ObjectHideFlags: 0
@@ -1296,7 +1296,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749924971}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b333d432972de894b9cc1ec5841cffeb, type: 3}
   m_Name: 
@@ -1373,7 +1373,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749924971}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c317b9f781bfe7740afa1d0c4d83d1d6, type: 3}
   m_Name: 
