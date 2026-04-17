@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject player2; // Referencia al prefab del jugador 2
     public GameObject player2Goal; // Referencia al GameObject del gol del jugador 2
     public TextMeshProUGUI player1ScoreText; // Referencia al texto del puntaje del jugador 1
-    public TextMeshProUGUI player2ScoreText; // Referencia al texto del punt
+    public TextMeshProUGUI player2ScoreText; // Referencia al texto del puntaje del jugador 2
+    public bool AIGame; // true = juego contra la IA, false = juego contra otro jugador, para activar o desactivar la IA
 
     private int player1Score = 0; // Puntaje del jugador 1
     private int player2Score = 0; // Puntaje del jugador 2
@@ -29,8 +30,16 @@ public class GameManager : MonoBehaviour
     }
     private void ResetPosition()
     {
-        ball.GetComponent<Ball>().Reset(); // Restablecer la posición de la pelota, llamando al método Reset() del script Ball, que es publico para que pueda ser accedido desde el GameManager
-        player1.GetComponent<Players>().ResetPlayer(); // Restablecer la posición del jugador 1, llamando al método ResetPlayer() del script Players, que es publico para que pueda ser accedido desde el GameManager
-        player2.GetComponent<Players>().ResetPlayer(); // Restablecer la posición del jugador 2, llamando al método ResetPlayer() del script Players, que es publico para que pueda ser accedido desde el GameManager
+        if (AIGame) // Si el juego es contra la IA, restablecer la posición del jugador 2 a la posición inicial de la IA
+        {
+            ball.GetComponent<Ball>().Reset(); // Restablecer la posición de la pelota, llamando al método Reset() del script Ball, que es publico para que pueda ser accedido desde el GameManager
+            player1.GetComponent<Players>().ResetPlayer(); // Restablecer la posición del jugador 1, llamando al método ResetPlayer() del script Players, que es publico para que pueda ser accedido desde el GameManager
+        }
+        else // Si el juego es contra otro jugador, restablecer la posición de ambos jugadores a sus posiciones iniciales
+        {
+            ball.GetComponent<Ball>().Reset(); // Restablecer la posición de la pelota, llamando al método Reset() del script Ball, que es publico para que pueda ser accedido desde el GameManager
+            player1.GetComponent<Players>().ResetPlayer(); // Restablecer la posición del jugador 1, llamando al método ResetPlayer() del script Players, que es publico para que pueda ser accedido desde el GameManager
+            player2.GetComponent<Players>().ResetPlayer(); // Restablecer la posición del jugador 2, llamando al método ResetPlayer() del script Players, que es publico para que pueda ser accedido desde el GameManager
+        }
     }
 }

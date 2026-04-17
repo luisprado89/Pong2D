@@ -951,6 +951,7 @@ MonoBehaviour:
   player2Goal: {fileID: 1146481991}
   player1ScoreText: {fileID: 1869324}
   player2ScoreText: {fileID: 629470836}
+  AIGame: 1
 --- !u!4 &1474595507
 Transform:
   m_ObjectHideFlags: 0
@@ -1133,6 +1134,7 @@ GameObject:
   - component: {fileID: 1749924972}
   - component: {fileID: 1749924977}
   - component: {fileID: 1749924976}
+  - component: {fileID: 1749924978}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -1294,7 +1296,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749924971}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b333d432972de894b9cc1ec5841cffeb, type: 3}
   m_Name: 
@@ -1364,6 +1366,20 @@ MonoBehaviour:
   m_DefaultActionMap: PlayerControls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1749924978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749924971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c317b9f781bfe7740afa1d0c4d83d1d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AI
+  speed: 3
+  ball: {fileID: 1786753104}
 --- !u!1 &1786753104
 GameObject:
   m_ObjectHideFlags: 0
